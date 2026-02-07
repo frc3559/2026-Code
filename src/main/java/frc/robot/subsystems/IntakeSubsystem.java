@@ -9,6 +9,6 @@ public class IntakeSubsystem {
     public static final int  kIntakeMotorCanId = 20;
 
     public IntakeSubsystem() {
-        final private intake = new SparkMax(kIntakeMotorCanId, MotorType.kBrushless);
+        final SparkMax intake = new SparkMax(kIntakeMotorCanId, MotorType.kBrushless);
     }
 }
