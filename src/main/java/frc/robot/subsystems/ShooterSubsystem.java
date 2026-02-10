@@ -2,15 +2,23 @@ package frc.robot.subsystems;
 
 import com.revrobotics.spark.SparkMax;
 import com.revrobotics.spark.SparkLowLevel.MotorType;
+import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
-public class ShooterSubsystem {
-    private SparkMax DriverController;
 
+public class ShooterSubsystem extends SubsystemBase {
+    public SparkMax shooter;
     public static final int  kShooterMotorCanId = 21;
 
     public ShooterSubsystem() {
-        final SparkMax shooter = new SparkMax(kShooterMotorCanId, MotorType.kBrushless);
+        shooter = new SparkMax(kShooterMotorCanId, MotorType.kBrushless);
 
+    }
+
+    public void ShooterOn() {
+        shooter.set(-1);
+    }
+    public void ShooterOff() {
+        shooter.set(0);
     }
     /*
     public void shooter(double speed){

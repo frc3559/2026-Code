@@ -82,6 +82,16 @@ public class RobotContainer {
         .onTrue(new InstantCommand(
             () -> m_robotDrive.zeroHeading(),
             m_robotDrive));
+
+    new JoystickButton(m_driverController, XboxController.Button.kA.value)
+        .onTrue(new InstantCommand(
+            () -> m_robotShoot.ShooterOn(),
+            m_robotShoot));
+    
+    new JoystickButton(m_driverController, XboxController.Button.kB.value)
+        .onTrue(new InstantCommand(
+            () -> m_robotShoot.ShooterOff(),
+        m_robotShoot));
     /*
     new JoystickButton(m_driverController, XboxController.Button.rightTrigger.value)
         .whileTrue(new InstantCommand(
